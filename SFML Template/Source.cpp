@@ -17,8 +17,7 @@ int main() {
 
 	sf::ContextSettings settings;
 	settings.antialiasingLevel = 8;
-	sf::RenderWindow window(sf::VideoMode(WindowWidth(), WindowHeight()), "Title", 0 ,settings);
-	//window.setFramerateLimit(0);
+	sf::RenderWindow window(sf::VideoMode(WindowWidth(), WindowHeight()), "Title", sf::Style::Close ,settings);
 
 	siv::PerlinNoise Noise;
 
@@ -52,9 +51,9 @@ int main() {
 			for (int x = 0; x < cols(); x++) {
 
 				int index = x + y * cols();
-				float angle = ((Noise.octaveNoise0_1(xoff, yoff, zoff, 8)) * PI);
+				float angle = ((Noise.octaveNoise0_1(xoff, yoff, zoff, 1)) * PI);
 				Vector2f v(sin(angle), cos(-angle));
-				v = setMag(v, 0.8);
+				v = setMag(v, 0.6);
 				flow[index] = v;
 				xoff += inc;
 			}

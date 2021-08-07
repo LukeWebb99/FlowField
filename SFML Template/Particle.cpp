@@ -7,8 +7,8 @@ void Particle::display(sf::RenderWindow & Window)
 	sf::VertexArray line(sf::LineStrip, 2);
 	line[0].position = (pos);
 	line[1].position = (prevpos);
-	line[1].color = (Color(255, 0, 0, 1));
-	line[0].color = (Color(255, 0, 0, 1));
+	line[1].color = (Color(100, 100, 0, 1));
+	line[0].color = (Color(255, 100, 100, 1));
 	Window.draw(line);
 	updatePrev();
 }
